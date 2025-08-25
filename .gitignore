@@ -9,3 +9,4 @@ obj/
 *.dbmdl
 *.log
 *.vscode/
+appsettings.json

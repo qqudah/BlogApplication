@@ -25,7 +25,7 @@ namespace BlogApplication.Controllers
                         statusCode: StatusCodes.Status500InternalServerError
  );
             }
-            return new JsonResult(new { imageUrl = imageUrl });
+            return new JsonResult(new { link = imageUrl });
         }
     }
 }
