@@ -1,0 +1,11 @@
+﻿# Ignore Visual Studio cache, build, and publish folders
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.vspscc
+*.vssscc
+*.dbmdl
+*.log
+*.vscode/
