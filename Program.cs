@@ -16,6 +16,7 @@ namespace BlogApplication
 
             builder.Services.AddScoped<ITagInterface, TagRepository>();
             builder.Services.AddScoped<IBlogRepository, BlogRepository>();
+            builder.Services.AddScoped<IImagesRepository, CloudinaryImageRepository>();
 
 
             var app = builder.Build();
