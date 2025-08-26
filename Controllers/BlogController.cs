@@ -154,5 +154,14 @@ namespace BlogApplication.Controllers
             return Json(new { success = true, message = "Blog deleted successfully" });
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Details(Guid id)
+        {
+            var blog = await _blogRepository.GetAsync(id);
+            if (blog == null)
+                return View(null);
+            return View(blog);
+        }
+
     }
 }

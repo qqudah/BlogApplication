@@ -1,0 +1,35 @@
+﻿@model BlogApplication.Models.Domain.Blog
+
+@{
+    ViewData["Title"] = Model.Heading;
+}
+
+<div class="d-flex justify-content-center align-items-start min-vh-100">
+    <div class="container mt-5" style="max-width: 800px;">
+        <h1 class="text-center mb-4">@Model.Heading</h1>
+        <p class="text-center">
+            <strong>Author:</strong> @Model.Author <br />
+            <strong>Published:</strong> @Model.CreatedAt.ToString("MMMM dd, yyyy")
+        </p>
+
+        <div class="mb-3 text-center">
+            <img src="@Model.ImageURL" alt="@Model.Heading" class="img-fluid rounded" />
+        </div>
+
+        <div class="mb-3 text-center">
+            @if (Model.Tags != null)
+            {
+                foreach (var tag in Model.Tags)
+                {
+                    <span class="badge bg-secondary me-1">@tag.Name</span>
+                }
+            }
+        </div>
+
+        <div class="content">
+            @Html.Raw(Model.Content)
+        </div>
+        <div class="mt-4 text-center">
+            <a class="btn btn-dark" asp-controller="Home" asp-action="Index">Back to Blogs</a>
+    </div>
+</div>

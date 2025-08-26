@@ -17,7 +17,7 @@ namespace BlogApplication.Controllers
         [HttpGet]
         public IActionResult Add()
         {
-            return View();
+            return PartialView("_AddPartial");
         }
 
         [HttpPost]

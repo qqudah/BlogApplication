@@ -6,9 +6,20 @@
 
 <h1>List</h1>
 
-<p>
-    <a asp-action="Add">Create New</a>
-</p>
+<button class="btn btn-dark" id="openTagModal">Add Tag</button>
+
+
+<div class="modal fade" id="tagModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body" id="tagModalContent">
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <table class="table">
     <thead>
         <tr>
@@ -49,4 +60,17 @@
             });
         }
     </script>
+    <script>
+        document.getElementById('openTagModal').addEventListener('click', function () {
+            fetch('/Tag/Add')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('tagModalContent').innerHTML = html;
+                    var tagModal = new bootstrap.Modal(document.getElementById('tagModal'));
+                    tagModal.show();
+                });
+        });
+    </script>
+
+
 }
